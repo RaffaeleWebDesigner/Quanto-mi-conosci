@@ -57,7 +57,9 @@ export function QuestionCard({ question, selected, onPick, disabled, reveal }: P
 function SliderInput({ question, selected, onPick, disabled, reveal }: Props & { question: Extract<Question, { type: 'slider' }> }) {
   const mid = Math.round((question.min + question.max) / 2);
   const [value, setValue] = useState(selected ?? mid);
-  useEffect(() => setValue(selected ?? mid), [question.id, selected, mid]);
+  useEffect(() => {
+    setValue(selected ?? mid);
+  }, [question.id, selected, mid]);
 
   const pct = (v: number) => ((v - question.min) / (question.max - question.min)) * 100;
   const locked = disabled || selected !== null || !!reveal;
