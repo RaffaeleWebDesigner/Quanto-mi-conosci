@@ -13,7 +13,11 @@ export function App() {
 
   // A ogni cambio di schermata o di domanda si riparte dall'alto
   const screenKey = `${view?.phase}-${view?.guessing?.targetId}-${view?.guessing?.step}`;
-  useEffect(() => window.scrollTo(0, 0), [screenKey]);
+  // Le graffe sono importanti: nei Chrome recenti scrollTo restituisce un valore
+  // che React scambierebbe per una funzione di pulizia (crash al cambio schermata)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screenKey]);
 
   let screen;
   if (game.restoring) {
