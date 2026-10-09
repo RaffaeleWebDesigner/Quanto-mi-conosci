@@ -4,6 +4,9 @@ Party game multiplayer in tempo reale da giocare col telefono durante una serata
 Ognuno risponde in segreto a domande su sé stesso; poi, a turno, gli altri provano a indovinare.
 Niente installazione, niente account: si entra con un link o con un codice di 4 lettere.
 
+**▶ Gioca ora: [quanto-mi-conosci-q181.onrender.com](https://quanto-mi-conosci-q181.onrender.com)**
+(se nessuno ci gioca da un po', la prima apertura impiega 30-50 secondi)
+
 ## Stack
 
 - **Server**: Node + Express + Socket.IO (TypeScript, eseguito con `tsx`). Le stanze vivono in memoria e
@@ -61,7 +64,7 @@ npm start          # http://localhost:3000 e http://<IP-del-computer>:3000
    `render.yaml` configura tutto da solo.
    (Oppure **New → Web Service** a mano con:
    Build `npm install && npm run build`, Start `npm start`, piano Free.)
-3. Dopo il deploy il gioco è su `https://quanto-mi-conosci.onrender.com` (o simile).
+3. Dopo il deploy il gioco è online: quello attuale è su https://quanto-mi-conosci-q181.onrender.com
 
 Nota: col piano gratuito il servizio si addormenta dopo 15 minuti senza visite e il primo accesso
 impiega circa 30-50 secondi. Riavviandosi, le stanze in memoria si perdono, ma a quel punto non c'è
