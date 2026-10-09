@@ -1,0 +1,12 @@
+# Deploy su Render (piano gratuito): New → Blueprint → seleziona questo repository.
+services:
+  - type: web
+    name: quanto-mi-conosci
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
